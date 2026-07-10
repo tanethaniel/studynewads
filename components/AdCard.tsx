@@ -34,15 +34,15 @@ export function AdCard({ ad, scatter }: { ad: Ad; scatter?: ScatterPosition }) {
       className={
         scatter
           ? "group absolute overflow-hidden rounded-lg border border-line bg-bg-raised shadow-sm transition-shadow hover:z-20 hover:shadow-md"
-          : "group relative mb-6 block break-inside-avoid overflow-hidden rounded-lg border border-line bg-bg-raised"
+          : "group relative block overflow-hidden rounded-lg border border-line bg-bg-raised"
       }
     >
-      <div className="drift-media" style={driftSeed(ad.slug)}>
+      <div className="drift-media aspect-square overflow-hidden" style={driftSeed(ad.slug)}>
         <AdImage
           src={primary?.image_url}
           alt={primary?.caption ?? `${ad.brand_name} — ${ad.title}`}
           brandName={ad.brand_name}
-          className="h-auto w-full transition duration-500 group-hover:scale-[1.04]"
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />

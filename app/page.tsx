@@ -10,7 +10,7 @@ export default async function HomePage() {
       <div className="hidden md:block">
         <ScatteredGallery ads={ads} />
       </div>
-      <div className="columns-2 gap-6 md:hidden">
+      <div className="grid grid-cols-2 gap-6 md:hidden">
         {ads.map((ad) => (
           <AdCard key={ad.slug} ad={ad} />
         ))}

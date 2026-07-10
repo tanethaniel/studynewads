@@ -61,16 +61,17 @@ export default async function AdDetailPage({
       </div>
 
       {rest.length > 0 && (
-        <div className="mt-3 columns-4 gap-3 sm:columns-6">
+        <div className="mt-3 grid grid-cols-4 gap-3 sm:grid-cols-6">
           {rest.map((image) => (
             <div
               key={image.id}
-              className="mb-3 break-inside-avoid overflow-hidden rounded-lg border border-line bg-bg-raised"
+              className="aspect-square overflow-hidden rounded-lg border border-line bg-bg-raised"
             >
               <AdImage
                 src={image.image_url}
                 alt={image.caption ?? `${ad.brand_name} — ${ad.title}`}
                 brandName={ad.brand_name}
+                className="h-full w-full object-cover"
               />
             </div>
           ))}
