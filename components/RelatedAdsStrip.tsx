@@ -8,7 +8,7 @@ export function RelatedAdsStrip({ ads }: { ads: Ad[] }) {
       <h2 className="text-sm font-mono-tag uppercase text-ink-dim mb-4">
         More to study
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="columns-2 gap-3 sm:columns-3 lg:columns-6">
         {ads.map((ad) => (
           <AdCard key={ad.slug} ad={ad} />
         ))}

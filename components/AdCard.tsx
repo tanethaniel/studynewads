@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Ad } from "@/lib/types";
+import type { ScatterPosition } from "@/lib/scatterLayout";
 import { AdImage } from "@/components/AdImage";
 
 function driftSeed(slug: string) {
@@ -13,21 +14,35 @@ function driftSeed(slug: string) {
   } as React.CSSProperties;
 }
 
-export function AdCard({ ad }: { ad: Ad }) {
+export function AdCard({ ad, scatter }: { ad: Ad; scatter?: ScatterPosition }) {
   const primary = ad.images[0];
+
+  const style: React.CSSProperties = scatter
+    ? {
+        left: scatter.left,
+        top: scatter.top,
+        width: scatter.width,
+        zIndex: scatter.zIndex,
+        transform: `translateX(-50%) rotate(${scatter.rotate}deg)`,
+      }
+    : {};
 
   return (
     <Link
       href={`/ad/${ad.slug}`}
-      className="group relative block aspect-square overflow-hidden rounded-lg border border-line bg-bg-raised"
+      style={style}
+      className={
+        scatter
+          ? "group absolute overflow-hidden rounded-lg border border-line bg-bg-raised shadow-sm transition-transform hover:z-20 hover:!rotate-0"
+          : "group relative mb-6 block break-inside-avoid overflow-hidden rounded-lg border border-line bg-bg-raised"
+      }
     >
-      <div className="drift-media absolute inset-0" style={driftSeed(ad.slug)}>
+      <div className="drift-media" style={driftSeed(ad.slug)}>
         <AdImage
           src={primary?.image_url}
           alt={primary?.caption ?? `${ad.brand_name} — ${ad.title}`}
           brandName={ad.brand_name}
-          sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
-          className="object-contain transition duration-500 group-hover:scale-[1.04]"
+          className="h-auto w-full transition duration-500 group-hover:scale-[1.04]"
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />

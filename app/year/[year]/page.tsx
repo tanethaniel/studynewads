@@ -25,7 +25,7 @@ export default async function YearPage({
       <p className="text-sm text-ink-dim mb-8 font-mono-tag uppercase">
         {ads.length} {ads.length === 1 ? "ad" : "ads"}
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+      <div className="columns-2 gap-6 sm:columns-3 sm:gap-8 lg:columns-4">
         {ads.map((ad) => (
           <AdCard key={ad.slug} ad={ad} />
         ))}

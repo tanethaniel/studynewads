@@ -50,30 +50,27 @@ export default async function AdDetailPage({
         </Link>
       </nav>
 
-      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-line bg-bg-raised">
+      <div className="mx-auto max-h-[70vh] w-fit overflow-hidden rounded-xl border border-line bg-bg-raised">
         <AdImage
           src={hero?.image_url}
           alt={hero?.caption ?? `${ad.brand_name} — ${ad.title}`}
           brandName={ad.brand_name}
-          sizes="(min-width: 1024px) 1024px, 100vw"
-          className="object-contain"
+          className="max-h-[70vh] w-auto"
           priority
         />
       </div>
 
       {rest.length > 0 && (
-        <div className="mt-3 grid grid-cols-4 sm:grid-cols-6 gap-3">
+        <div className="mt-3 columns-4 gap-3 sm:columns-6">
           {rest.map((image) => (
             <div
               key={image.id}
-              className="relative aspect-square overflow-hidden rounded-lg border border-line bg-bg-raised"
+              className="mb-3 break-inside-avoid overflow-hidden rounded-lg border border-line bg-bg-raised"
             >
               <AdImage
                 src={image.image_url}
                 alt={image.caption ?? `${ad.brand_name} — ${ad.title}`}
                 brandName={ad.brand_name}
-                sizes="200px"
-                className="object-contain"
               />
             </div>
           ))}
