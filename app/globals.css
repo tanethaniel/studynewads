@@ -1,13 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0e0e0f;
-  --bg-raised: #16161a;
-  --ink: #f4f3ee;
-  --ink-dim: #8b8b93;
-  --line: #262629;
-  --accent: #baff3f;
-  --accent-ink: #0e0e0f;
+  --bg: #ffffff;
+  --bg-raised: #f4f4f2;
+  --ink: #111111;
+  --ink-dim: #767672;
+  --line: #e3e2dd;
 }
 
 @theme inline {
@@ -16,8 +14,6 @@
   --color-ink: var(--ink);
   --color-ink-dim: var(--ink-dim);
   --color-line: var(--line);
-  --color-accent: var(--accent);
-  --color-accent-ink: var(--accent-ink);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains);
 }
@@ -44,14 +40,34 @@ body {
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(186, 255, 63, 0.5);
+    box-shadow: 0 0 0 0 rgba(17, 17, 17, 0.35);
   }
   50% {
-    opacity: 0.6;
-    box-shadow: 0 0 0 4px rgba(186, 255, 63, 0);
+    opacity: 0.5;
+    box-shadow: 0 0 0 4px rgba(17, 17, 17, 0);
   }
 }
 
 .pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.03);
+  }
+  100% {
+    transform: translate3d(var(--drift-x, 4px), var(--drift-y, -6px), 0) scale(1.05);
+  }
+}
+
+.drift-media {
+  animation: drift var(--drift-duration, 9s) ease-in-out infinite alternate;
+  animation-delay: var(--drift-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift-media {
+    animation: none;
+  }
 }

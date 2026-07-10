@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
+import { InfoPanel } from "@/components/InfoPanel";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,41 +27,42 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const year = new Date().getFullYear();
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-ink antialiased">
-        <header className="border-b border-line">
-          <div className="mx-auto max-w-[1600px] px-5 sm:px-8 py-5 flex items-center justify-between">
-            <Link href="/" className="flex items-baseline gap-2 group">
-              <span className="text-lg font-semibold tracking-tight">
-                study<span className="text-accent">new</span>ads
-              </span>
-              <span className="hidden sm:inline text-xs font-mono-tag text-ink-dim uppercase">
-                / last 24 months
-              </span>
-            </Link>
-            <div className="flex items-center gap-1.5 text-xs font-mono-tag uppercase text-ink-dim">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent pulse-dot" />
-              updated continuously
-            </div>
+      <body className="min-h-full bg-bg text-ink antialiased">
+        <div className="pointer-events-none fixed inset-0 z-40 text-xs font-mono-tag uppercase tracking-wide">
+          <span className="pointer-events-auto absolute left-5 top-5 text-ink-dim sm:left-8 sm:top-8">
+            © {year}
+          </span>
+          <Link
+            href="/"
+            className="pointer-events-auto absolute left-1/2 top-5 -translate-x-1/2 text-sm font-semibold normal-case tracking-tight text-ink sm:top-8"
+          >
+            studynewads
+          </Link>
+          <div className="pointer-events-auto absolute right-5 top-5 sm:right-8 sm:top-8">
+            <InfoPanel />
           </div>
-        </header>
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-line">
-          <div className="mx-auto max-w-[1600px] px-5 sm:px-8 py-8 text-xs text-ink-dim flex flex-col sm:flex-row gap-2 sm:justify-between">
-            <p>
-              A non-commercial study archive. Creative belongs to the
-              respective brands and is republished here for commentary and
-              reference.
-            </p>
-            <p className="font-mono-tag uppercase">
-              sourced by an automated research pipeline
-            </p>
-          </div>
-        </footer>
+          <span className="pointer-events-auto absolute left-5 bottom-5 flex items-center gap-1.5 text-ink-dim sm:left-8 sm:bottom-8">
+            <span className="h-1.5 w-1.5 rounded-full bg-ink pulse-dot" />
+            <span className="hidden sm:inline">updated continuously</span>
+          </span>
+          <Link
+            href="/"
+            className="pointer-events-auto absolute right-5 bottom-5 text-ink-dim transition hover:text-ink sm:right-8 sm:bottom-8"
+          >
+            Index
+          </Link>
+        </div>
+
+        <main className="min-h-screen pt-16 pb-16 sm:pt-20 sm:pb-20">
+          {children}
+        </main>
       </body>
     </html>
   );

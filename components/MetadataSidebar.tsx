@@ -22,7 +22,7 @@ export function MetadataSidebar({ ad }: { ad: Ad }) {
             href={ad.source_url}
             target="_blank"
             rel="noopener noreferrer nofollow"
-            className="hover:text-accent transition"
+            className="underline decoration-line underline-offset-4 transition hover:decoration-ink"
           >
             {ad.source_name ?? ad.source_url}
           </a>
@@ -34,7 +34,7 @@ export function MetadataSidebar({ ad }: { ad: Ad }) {
             href={ad.seed_thread_url}
             target="_blank"
             rel="noopener noreferrer nofollow"
-            className="hover:text-accent transition"
+            className="underline decoration-line underline-offset-4 transition hover:decoration-ink"
           >
             View thread
           </a>

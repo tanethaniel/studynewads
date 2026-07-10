@@ -40,17 +40,21 @@ export default async function AdDetailPage({
   return (
     <div className="mx-auto max-w-5xl px-5 sm:px-8 py-8">
       <nav className="flex items-center gap-2 text-sm text-ink-dim mb-6">
-        <Link href="/" className="hover:text-accent transition">
+        <Link
+          href="/"
+          className="underline decoration-line underline-offset-4 transition hover:decoration-ink"
+        >
           Home
         </Link>
       </nav>
 
       {hero && (
-        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-bg-raised">
+        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-line bg-bg-raised">
           <Image
             src={hero.image_url}
             alt={`${ad.brand_name} — ${ad.title}`}
             fill
+            unoptimized={hero.image_url.endsWith(".svg")}
             sizes="(min-width: 1024px) 1024px, 100vw"
             className="object-cover"
             priority
@@ -60,20 +64,24 @@ export default async function AdDetailPage({
 
       {rest.length > 0 && (
         <div className="mt-3 grid grid-cols-4 sm:grid-cols-6 gap-3">
-          {rest.map((image) => (
-            <div
-              key={image.id}
-              className="relative aspect-[4/5] overflow-hidden rounded-lg bg-bg-raised"
-            >
-              <Image
-                src={image.thumbnail_url ?? image.image_url}
-                alt={`${ad.brand_name} — ${ad.title}`}
-                fill
-                sizes="200px"
-                className="object-cover"
-              />
-            </div>
-          ))}
+          {rest.map((image) => {
+            const src = image.thumbnail_url ?? image.image_url;
+            return (
+              <div
+                key={image.id}
+                className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line bg-bg-raised"
+              >
+                <Image
+                  src={src}
+                  alt={`${ad.brand_name} — ${ad.title}`}
+                  fill
+                  unoptimized={src.endsWith(".svg")}
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </div>
+            );
+          })}
         </div>
       )}
 
