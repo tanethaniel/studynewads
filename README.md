@@ -128,6 +128,24 @@ step gets added to the Gumloop flow itself (as a step before the Supabase
 Table Writer node) so new ads never write a live external URL in the first
 place — see the note in "Wiring up Gumloop" below.
 
+### Or trigger it from a browser instead
+
+`app/api/backfill-images/route.ts` runs the same logic as a route on the
+deployed site, for when running a local script isn't convenient. It needs
+one more Vercel env var beyond the usual three: `SUPABASE_SECRET_KEY`
+(server-side only — do **not** prefix it `NEXT_PUBLIC_`, or it ends up in
+the browser bundle). It reuses `REVALIDATE_SECRET` for its own auth.
+
+Visit (or curl) this URL — it processes a small batch per call (default 6,
+capped at 15) to stay under Vercel's function execution limit, and reports
+`more_remaining: true` if there's more to do:
+
+```
+https://studynewads.vercel.app/api/backfill-images?secret=<REVALIDATE_SECRET>
+```
+
+Reload/re-visit the same URL until the response says `more_remaining: false`.
+
 ## Deploying
 
 Push to Vercel, set the three env vars above in the project settings, done.
