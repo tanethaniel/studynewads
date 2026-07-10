@@ -1,0 +1,18 @@
+import type { Ad } from "@/lib/types";
+import { AdCard } from "@/components/AdCard";
+
+export function RelatedAdsStrip({ ads }: { ads: Ad[] }) {
+  if (!ads.length) return null;
+  return (
+    <section className="mt-16">
+      <h2 className="text-sm font-mono-tag uppercase text-ink-dim mb-4">
+        More to study
+      </h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        {ads.map((ad) => (
+          <AdCard key={ad.slug} ad={ad} />
+        ))}
+      </div>
+    </section>
+  );
+}
