@@ -2,9 +2,11 @@ export interface AdImage {
   id: string;
   ad_id: string;
   image_url: string;
-  thumbnail_url: string | null;
-  width: number | null;
-  height: number | null;
+  storage_path: string | null;
+  caption: string | null;
+  is_primary: boolean;
+  source_url: string | null;
+  created_at: string;
 }
 
 export interface Ad {

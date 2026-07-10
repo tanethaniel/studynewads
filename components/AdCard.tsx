@@ -15,7 +15,7 @@ function driftSeed(slug: string) {
 
 export function AdCard({ ad }: { ad: Ad }) {
   const primary = ad.images[0];
-  const src = primary?.thumbnail_url ?? primary?.image_url;
+  const src = primary?.image_url;
 
   return (
     <Link
@@ -26,7 +26,7 @@ export function AdCard({ ad }: { ad: Ad }) {
         <div className="drift-media absolute inset-0" style={driftSeed(ad.slug)}>
           <Image
             src={src}
-            alt={`${ad.brand_name} — ${ad.title}`}
+            alt={primary?.caption ?? `${ad.brand_name} — ${ad.title}`}
             fill
             unoptimized={src.endsWith(".svg")}
             sizes="(min-width: 1280px) 20vw, (min-width: 768px) 33vw, 50vw"

@@ -17,6 +17,15 @@ function localAds(): Ad[] {
   return seedAds as unknown as Ad[];
 }
 
+// The primary-flagged image (if any) leads; PostgREST doesn't let us order
+// embedded rows, so this happens client-side after the fetch.
+function withSortedImages(ad: Ad): Ad {
+  return {
+    ...ad,
+    images: [...ad.images].sort((a, b) => Number(b.is_primary) - Number(a.is_primary)),
+  };
+}
+
 export async function getAds(): Promise<Ad[]> {
   if (!BASE || !headers) {
     return [...localAds()].sort(
@@ -28,7 +37,8 @@ export async function getAds(): Promise<Ad[]> {
     { headers, next: { revalidate: 120, tags: ["ads"] } }
   );
   if (!res.ok) return [];
-  return res.json();
+  const rows: Ad[] = await res.json();
+  return rows.map(withSortedImages);
 }
 
 export async function getAdBySlug(slug: string): Promise<Ad | null> {
@@ -41,7 +51,7 @@ export async function getAdBySlug(slug: string): Promise<Ad | null> {
   );
   if (!res.ok) return null;
   const rows: Ad[] = await res.json();
-  return rows[0] ?? null;
+  return rows[0] ? withSortedImages(rows[0]) : null;
 }
 
 export async function getAdsByYear(year: string): Promise<Ad[]> {

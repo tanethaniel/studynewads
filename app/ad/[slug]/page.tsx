@@ -52,7 +52,7 @@ export default async function AdDetailPage({
         <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-line bg-bg-raised">
           <Image
             src={hero.image_url}
-            alt={`${ad.brand_name} — ${ad.title}`}
+            alt={hero.caption ?? `${ad.brand_name} — ${ad.title}`}
             fill
             unoptimized={hero.image_url.endsWith(".svg")}
             sizes="(min-width: 1024px) 1024px, 100vw"
@@ -64,24 +64,21 @@ export default async function AdDetailPage({
 
       {rest.length > 0 && (
         <div className="mt-3 grid grid-cols-4 sm:grid-cols-6 gap-3">
-          {rest.map((image) => {
-            const src = image.thumbnail_url ?? image.image_url;
-            return (
-              <div
-                key={image.id}
-                className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line bg-bg-raised"
-              >
-                <Image
-                  src={src}
-                  alt={`${ad.brand_name} — ${ad.title}`}
-                  fill
-                  unoptimized={src.endsWith(".svg")}
-                  sizes="200px"
-                  className="object-cover"
-                />
-              </div>
-            );
-          })}
+          {rest.map((image) => (
+            <div
+              key={image.id}
+              className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line bg-bg-raised"
+            >
+              <Image
+                src={image.image_url}
+                alt={image.caption ?? `${ad.brand_name} — ${ad.title}`}
+                fill
+                unoptimized={image.image_url.endsWith(".svg")}
+                sizes="200px"
+                className="object-cover"
+              />
+            </div>
+          ))}
         </div>
       )}
 
