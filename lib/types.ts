@@ -20,6 +20,7 @@ export interface Ad {
   source_name: string | null;
   source_url: string | null;
   seed_thread_url: string | null;
+  advertiser_page_url: string | null;
   created_at: string;
   images: AdImage[];
 }

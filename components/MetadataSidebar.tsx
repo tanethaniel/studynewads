@@ -15,6 +15,18 @@ export function MetadataSidebar({ ad }: { ad: Ad }) {
   return (
     <dl className="rounded-lg border border-line bg-bg-raised px-4">
       <Row label="Year">{ad.year ?? "Undated"}</Row>
+      {ad.advertiser_page_url && (
+        <Row label="Ad">
+          <a
+            href={ad.advertiser_page_url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="underline decoration-line underline-offset-4 transition hover:decoration-ink"
+          >
+            Visit the ad
+          </a>
+        </Row>
+      )}
       {ad.origin && ad.origin.toLowerCase() !== "agent" && (
         <Row label="Origin">{ad.origin}</Row>
       )}

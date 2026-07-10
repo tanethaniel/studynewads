@@ -177,6 +177,7 @@ flows, only running/reading them). Two flows to build, in this order:
 | `origin` | which flow/source produced the row, e.g. `gumloop-flow-1`, `seed`, `agent` |
 | `source_name`, `source_url` | single citation link shown on the detail page |
 | `seed_thread_url` | link to the research thread/conversation that surfaced the ad, shown as "View thread" if present |
+| `advertiser_page_url` | link to the ad/campaign itself (not the citation), shown as "Visit the ad" if present |
 | `slug` | unique |
 | `is_published` | gates what the public site can read (RLS) — new rows should default to `false` until reviewed |
 
