@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -6,6 +5,7 @@ import { getAdBySlug, getAds, getRelatedAds } from "@/lib/ads";
 import { MetadataSidebar } from "@/components/MetadataSidebar";
 import { RelatedAdsStrip } from "@/components/RelatedAdsStrip";
 import { EscapeToHome } from "@/components/EscapeToHome";
+import { AdImage } from "@/components/AdImage";
 
 export async function generateStaticParams() {
   const ads = await getAds();
@@ -50,19 +50,16 @@ export default async function AdDetailPage({
         </Link>
       </nav>
 
-      {hero && (
-        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-line bg-bg-raised">
-          <Image
-            src={hero.image_url}
-            alt={hero.caption ?? `${ad.brand_name} — ${ad.title}`}
-            fill
-            unoptimized
-            sizes="(min-width: 1024px) 1024px, 100vw"
-            className="object-cover"
-            priority
-          />
-        </div>
-      )}
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border border-line bg-bg-raised">
+        <AdImage
+          src={hero?.image_url}
+          alt={hero?.caption ?? `${ad.brand_name} — ${ad.title}`}
+          brandName={ad.brand_name}
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          className="object-contain"
+          priority
+        />
+      </div>
 
       {rest.length > 0 && (
         <div className="mt-3 grid grid-cols-4 sm:grid-cols-6 gap-3">
@@ -71,13 +68,12 @@ export default async function AdDetailPage({
               key={image.id}
               className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line bg-bg-raised"
             >
-              <Image
+              <AdImage
                 src={image.image_url}
                 alt={image.caption ?? `${ad.brand_name} — ${ad.title}`}
-                fill
-                unoptimized
+                brandName={ad.brand_name}
                 sizes="200px"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           ))}
