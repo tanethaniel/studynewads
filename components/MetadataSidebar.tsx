@@ -15,7 +15,9 @@ export function MetadataSidebar({ ad }: { ad: Ad }) {
   return (
     <dl className="rounded-lg border border-line bg-bg-raised px-4">
       <Row label="Year">{ad.year ?? "Undated"}</Row>
-      <Row label="Origin">{ad.origin ?? "Unknown"}</Row>
+      {ad.origin && ad.origin.toLowerCase() !== "agent" && (
+        <Row label="Origin">{ad.origin}</Row>
+      )}
       {ad.source_url && (
         <Row label="Source">
           <a

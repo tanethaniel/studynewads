@@ -23,7 +23,7 @@ export function AdCard({ ad, scatter }: { ad: Ad; scatter?: ScatterPosition }) {
         top: scatter.top,
         width: scatter.width,
         zIndex: scatter.zIndex,
-        transform: `translateX(-50%) rotate(${scatter.rotate}deg)`,
+        transform: "translateX(-50%)",
       }
     : {};
 
@@ -33,7 +33,7 @@ export function AdCard({ ad, scatter }: { ad: Ad; scatter?: ScatterPosition }) {
       style={style}
       className={
         scatter
-          ? "group absolute overflow-hidden rounded-lg border border-line bg-bg-raised shadow-sm transition-transform hover:z-20 hover:!rotate-0"
+          ? "group absolute overflow-hidden rounded-lg border border-line bg-bg-raised shadow-sm transition-shadow hover:z-20 hover:shadow-md"
           : "group relative mb-6 block break-inside-avoid overflow-hidden rounded-lg border border-line bg-bg-raised"
       }
     >
