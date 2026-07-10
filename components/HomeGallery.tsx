@@ -20,6 +20,7 @@ export function HomeGallery({ ads }: { ads: Ad[] }) {
   }, [ads]);
 
   const [selected, setSelected] = useState<string | null>(null);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const filtered = selected ? ads.filter((ad) => ad.vertical === selected) : ads;
 
   if (verticals.length === 0) {
@@ -39,32 +40,51 @@ export function HomeGallery({ ads }: { ads: Ad[] }) {
 
   return (
     <div>
-      <div className="mb-8 flex flex-wrap gap-x-5 gap-y-2 text-xs font-mono-tag uppercase tracking-wide">
+      <div className="mb-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-mono-tag uppercase tracking-wide">
         <button
           type="button"
-          onClick={() => setSelected(null)}
+          onClick={() => setFiltersOpen((open) => !open)}
           className={
-            selected === null
+            filtersOpen || selected !== null
               ? "text-ink underline underline-offset-4"
               : "text-ink-dim transition hover:text-ink"
           }
         >
-          All
+          Filter{selected ? ` · ${titleCase(selected)}` : ""}
         </button>
-        {verticals.map((v) => (
-          <button
-            key={v}
-            type="button"
-            onClick={() => setSelected(v)}
-            className={
-              selected === v
-                ? "text-ink underline underline-offset-4"
-                : "text-ink-dim transition hover:text-ink"
-            }
-          >
-            {titleCase(v)}
-          </button>
-        ))}
+        {filtersOpen && (
+          <>
+            <button
+              type="button"
+              onClick={() => setSelected(null)}
+              className={
+                "roll-in " +
+                (selected === null
+                  ? "text-ink underline underline-offset-4"
+                  : "text-ink-dim transition hover:text-ink")
+              }
+              style={{ animationDelay: "0ms" }}
+            >
+              All
+            </button>
+            {verticals.map((v, i) => (
+              <button
+                key={v}
+                type="button"
+                onClick={() => setSelected(v)}
+                className={
+                  "roll-in " +
+                  (selected === v
+                    ? "text-ink underline underline-offset-4"
+                    : "text-ink-dim transition hover:text-ink")
+                }
+                style={{ animationDelay: `${(i + 1) * 60}ms` }}
+              >
+                {titleCase(v)}
+              </button>
+            ))}
+          </>
+        )}
       </div>
 
       <div className="hidden md:block">
