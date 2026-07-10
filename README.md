@@ -99,6 +99,35 @@ rows):
 2. Run `supabase/seed.sql` to load the 15 local demo ads (optional, but
    recommended so the site isn't empty before Gumloop is wired up).
 
+## Re-hosting ad images that live on external hosts
+
+`ad_images.image_url` currently often points directly at wherever the
+research step found the image (a news site, brand CDN, ad-industry blog).
+Two problems with that: some hosts hotlink-block image requests that don't
+come from their own site (the site falls back to a placeholder gracefully
+in that case, but the real image never loads), and a URL can break later if
+the host moves or deletes it.
+
+`scripts/backfill-image-storage.mjs` fixes both by downloading each image
+server-side (bypassing referer-based hotlink blocks, since a server-to-server
+fetch doesn't carry the cross-site referer that trips those) and re-uploading
+it to a public Supabase Storage bucket, then pointing `image_url` at that
+copy instead. `ad_images.source_url` is left untouched, so the original page
+is still credited. Run it locally, never with the secret key pasted into a
+shared/AI session:
+
+```bash
+SUPABASE_URL=https://<project-ref>.supabase.co \
+SUPABASE_SECRET_KEY=sb_secret_... \
+node scripts/backfill-image-storage.mjs
+```
+
+Safe to re-run — it only processes rows where `storage_path` is still null,
+so already-migrated images are skipped. Ideally this same download-and-upload
+step gets added to the Gumloop flow itself (as a step before the Supabase
+Table Writer node) so new ads never write a live external URL in the first
+place — see the note in "Wiring up Gumloop" below.
+
 ## Deploying
 
 Push to Vercel, set the three env vars above in the project settings, done.
