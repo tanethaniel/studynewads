@@ -66,7 +66,7 @@ export default async function AdDetailPage({
           {rest.map((image) => (
             <div
               key={image.id}
-              className="relative aspect-[4/5] overflow-hidden rounded-lg border border-line bg-bg-raised"
+              className="relative aspect-square overflow-hidden rounded-lg border border-line bg-bg-raised"
             >
               <AdImage
                 src={image.image_url}

@@ -19,7 +19,7 @@ export function AdCard({ ad }: { ad: Ad }) {
   return (
     <Link
       href={`/ad/${ad.slug}`}
-      className="group relative block aspect-[4/5] overflow-hidden rounded-lg border border-line bg-bg-raised"
+      className="group relative block aspect-square overflow-hidden rounded-lg border border-line bg-bg-raised"
     >
       <div className="drift-media absolute inset-0" style={driftSeed(ad.slug)}>
         <AdImage
