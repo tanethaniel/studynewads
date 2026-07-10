@@ -28,8 +28,8 @@ export function AdCard({ ad }: { ad: Ad }) {
             src={src}
             alt={primary?.caption ?? `${ad.brand_name} — ${ad.title}`}
             fill
-            unoptimized={src.endsWith(".svg")}
-            sizes="(min-width: 1280px) 20vw, (min-width: 768px) 33vw, 50vw"
+            unoptimized
+            sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 50vw"
             className="object-cover transition duration-500 group-hover:scale-[1.04]"
           />
         </div>

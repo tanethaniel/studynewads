@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { getAdBySlug, getAds, getRelatedAds } from "@/lib/ads";
 import { MetadataSidebar } from "@/components/MetadataSidebar";
 import { RelatedAdsStrip } from "@/components/RelatedAdsStrip";
+import { EscapeToHome } from "@/components/EscapeToHome";
 
 export async function generateStaticParams() {
   const ads = await getAds();
@@ -39,6 +40,7 @@ export default async function AdDetailPage({
 
   return (
     <div className="mx-auto max-w-5xl px-5 sm:px-8 py-8">
+      <EscapeToHome />
       <nav className="flex items-center gap-2 text-sm text-ink-dim mb-6">
         <Link
           href="/"
@@ -54,7 +56,7 @@ export default async function AdDetailPage({
             src={hero.image_url}
             alt={hero.caption ?? `${ad.brand_name} — ${ad.title}`}
             fill
-            unoptimized={hero.image_url.endsWith(".svg")}
+            unoptimized
             sizes="(min-width: 1024px) 1024px, 100vw"
             className="object-cover"
             priority
@@ -73,7 +75,7 @@ export default async function AdDetailPage({
                 src={image.image_url}
                 alt={image.caption ?? `${ad.brand_name} — ${ad.title}`}
                 fill
-                unoptimized={image.image_url.endsWith(".svg")}
+                unoptimized
                 sizes="200px"
                 className="object-cover"
               />

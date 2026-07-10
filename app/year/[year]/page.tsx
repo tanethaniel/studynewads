@@ -20,12 +20,12 @@ export default async function YearPage({
   const ads = await getAdsByYear(year);
 
   return (
-    <div className="mx-auto max-w-[1600px] px-5 sm:px-8 py-8">
+    <div className="mx-auto max-w-[1600px] px-6 sm:px-10 py-12">
       <h1 className="text-2xl font-semibold tracking-tight mb-1">{year}</h1>
-      <p className="text-sm text-ink-dim mb-6 font-mono-tag uppercase">
+      <p className="text-sm text-ink-dim mb-8 font-mono-tag uppercase">
         {ads.length} {ads.length === 1 ? "ad" : "ads"}
       </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
         {ads.map((ad) => (
           <AdCard key={ad.slug} ad={ad} />
         ))}

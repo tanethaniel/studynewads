@@ -5,8 +5,8 @@ export default async function HomePage() {
   const ads = await getAds();
 
   return (
-    <div className="mx-auto max-w-[1600px] px-5 sm:px-8 py-8">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+    <div className="mx-auto max-w-[1600px] px-6 sm:px-10 py-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
         {ads.map((ad) => (
           <AdCard key={ad.slug} ad={ad} />
         ))}
