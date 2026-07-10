@@ -7,27 +7,24 @@ const BASE = SUPABASE_URL ? `${SUPABASE_URL}/rest/v1` : null;
 
 const headers = SUPABASE_KEY ? { apikey: SUPABASE_KEY } : undefined;
 
+const SELECT = "*,images:ad_images(*)";
+
 // Local fallback so the site is browsable before a Supabase project exists —
-// Gumloop and the seed script both write into the same `ads` shape, so this
-// is only ever a stand-in for local dev/demo, never used once env vars are set.
+// the seed script and Gumloop both write into the same `ads`/`ad_images`
+// shape, so this is only ever a stand-in for local dev/demo, never used
+// once env vars are set.
 function localAds(): Ad[] {
-  return (seedAds as Array<Partial<Ad> & { id: string; slug: string }>)
-    .filter((ad) => ad.is_published !== false)
-    .map((ad) => ({
-      created_at: ad.launch_date ?? new Date().toISOString(),
-      updated_at: ad.launch_date ?? new Date().toISOString(),
-      ...ad,
-    })) as Ad[];
+  return seedAds as unknown as Ad[];
 }
 
 export async function getAds(): Promise<Ad[]> {
   if (!BASE || !headers) {
-    return localAds().sort((a, b) =>
-      (b.launch_date ?? "").localeCompare(a.launch_date ?? "")
+    return [...localAds()].sort(
+      (a, b) => (b.year ?? 0) - (a.year ?? 0) || b.created_at.localeCompare(a.created_at)
     );
   }
   const res = await fetch(
-    `${BASE}/ads?select=*&is_published=eq.true&order=launch_date.desc`,
+    `${BASE}/ads?select=${SELECT}&order=year.desc,created_at.desc`,
     { headers, next: { revalidate: 120, tags: ["ads"] } }
   );
   if (!res.ok) return [];
@@ -39,7 +36,7 @@ export async function getAdBySlug(slug: string): Promise<Ad | null> {
     return localAds().find((ad) => ad.slug === slug) ?? null;
   }
   const res = await fetch(
-    `${BASE}/ads?select=*&slug=eq.${encodeURIComponent(slug)}&is_published=eq.true`,
+    `${BASE}/ads?select=${SELECT}&slug=eq.${encodeURIComponent(slug)}`,
     { headers, next: { revalidate: 120, tags: ["ads"] } }
   );
   if (!res.ok) return null;
@@ -47,24 +44,18 @@ export async function getAdBySlug(slug: string): Promise<Ad | null> {
   return rows[0] ?? null;
 }
 
-export async function getAdsByVertical(vertical: string): Promise<Ad[]> {
+export async function getAdsByYear(year: string): Promise<Ad[]> {
   const ads = await getAds();
-  return ads.filter((ad) => ad.vertical === vertical);
-}
-
-export async function getAdsByMonth(month: string): Promise<Ad[]> {
-  const ads = await getAds();
-  return ads.filter((ad) => ad.launch_date?.startsWith(month));
+  return ads.filter((ad) => String(ad.year) === year);
 }
 
 export async function getRelatedAds(ad: Ad, limit = 6): Promise<Ad[]> {
   const ads = await getAds();
-  return ads
-    .filter(
-      (other) =>
-        other.slug !== ad.slug &&
-        (other.brand === ad.brand || other.vertical === ad.vertical)
-    )
-    .sort((a) => (a.brand === ad.brand ? -1 : 1))
-    .slice(0, limit);
+  const sameBrand = ads.filter(
+    (other) => other.slug !== ad.slug && other.brand_name === ad.brand_name
+  );
+  const rest = ads.filter(
+    (other) => other.slug !== ad.slug && other.brand_name !== ad.brand_name
+  );
+  return [...sameBrand, ...rest].slice(0, limit);
 }

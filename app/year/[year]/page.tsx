@@ -1,30 +1,27 @@
 import type { Metadata } from "next";
-import { getAdsByVertical } from "@/lib/ads";
-import { titleCase } from "@/lib/format";
+import { getAdsByYear } from "@/lib/ads";
 import { AdCard } from "@/components/AdCard";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ vertical: string }>;
+  params: Promise<{ year: string }>;
 }): Promise<Metadata> {
-  const { vertical } = await params;
-  return { title: `${titleCase(vertical)} ads | studynewads` };
+  const { year } = await params;
+  return { title: `${year} ads | studynewads` };
 }
 
-export default async function CategoryPage({
+export default async function YearPage({
   params,
 }: {
-  params: Promise<{ vertical: string }>;
+  params: Promise<{ year: string }>;
 }) {
-  const { vertical } = await params;
-  const ads = await getAdsByVertical(vertical);
+  const { year } = await params;
+  const ads = await getAdsByYear(year);
 
   return (
     <div className="mx-auto max-w-[1600px] px-5 sm:px-8 py-8">
-      <h1 className="text-2xl font-semibold tracking-tight mb-1">
-        {titleCase(vertical)}
-      </h1>
+      <h1 className="text-2xl font-semibold tracking-tight mb-1">{year}</h1>
       <p className="text-sm text-ink-dim mb-6 font-mono-tag uppercase">
         {ads.length} {ads.length === 1 ? "ad" : "ads"}
       </p>
@@ -35,7 +32,7 @@ export default async function CategoryPage({
       </div>
       {ads.length === 0 && (
         <p className="text-ink-dim text-sm py-24 text-center">
-          Nothing archived in this category yet.
+          Nothing archived for this year yet.
         </p>
       )}
     </div>

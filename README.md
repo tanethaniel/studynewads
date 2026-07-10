@@ -6,24 +6,27 @@ print, and kept up to date by an automated research pipeline instead of a
 static scan library.
 
 Built with Next.js (App Router) + TypeScript + Tailwind, reading from
-Supabase, deployed on Vercel. Ad discovery and write-up runs in Gumloop.
+Supabase, deployed on Vercel at [studynewads.vercel.app](https://studynewads.vercel.app/)
+(custom domain: `studynewads.com`). Ad discovery and write-up runs in Gumloop.
 
 ## What's here
 
 - `app/page.tsx` — dense homepage grid of ad tiles
-- `app/ad/[slug]/page.tsx` — detail page: hero creative, brand/headline,
-  fact-checked context, metadata sidebar, sources, "More to study" related strip
-- `app/category/[vertical]/page.tsx` — ads grouped by vertical
-- `app/month/[month]/page.tsx` — ads grouped by launch month (`2024-06`, etc.)
+- `app/ad/[slug]/page.tsx` — detail page: hero creative (+ extra images if
+  present), brand/title, fact-checked description, metadata sidebar, "More to
+  study" related strip
+- `app/year/[year]/page.tsx` — ads grouped by year
 - `app/api/revalidate/route.ts` — on-demand cache revalidation, called by Gumloop after every write
-- `lib/ads.ts` — data layer (direct PostgREST calls, tag-based fetch caching)
+- `lib/ads.ts` — data layer (direct PostgREST calls, tag-based fetch caching,
+  joins `ad_images` per ad)
 - `data/seed-ads.json` — 15 hand-picked real campaigns so the site isn't empty
   before Supabase/Gumloop exist; also the source for `supabase/seed.sql` and
   the local dev fallback (see below)
-- `supabase/schema.sql` — the `ads` table, indexes, RLS policy
+- `supabase/schema.sql` — the `ads` + `ad_images` tables, indexes, RLS policy
 - `supabase/seed.sql` — generated insert statements for the seed data
 - `public/seed/*.svg` — generated placeholder art standing in for real ad
-  creative (Gumloop will populate `media_url` with real Ad Library images later)
+  creative (Gumloop will populate `ad_images.image_url` with real Ad Library
+  images later)
 
 ## Running locally
 
@@ -71,29 +74,47 @@ Flow construction happens by hand in the Gumloop canvas (no API for creating
 flows, only running/reading them). Two flows to build, in this order:
 
 1. **Add one ad manually** — paste a URL, scrape it, extract fields into the
-   `ads` schema below, upsert via Supabase Table Writer, call
+   schema below, upsert via Supabase Table Writer, call
    `POST /api/revalidate?secret=...`. Build and test this one first — it's
    the simplest end-to-end proof and the one to demo live.
-2. **Discover new ads** (scheduled/manual) — Facebook Ad Library Scraper per
-   vertical → filter to last 24 months → AI quality filter → web research for
-   context → extract into the same schema → same upsert + revalidate steps.
+2. **Discover new ads** (scheduled/manual) — Facebook Ad Library Scraper →
+   filter to last 24 months → AI quality filter → web research for context →
+   extract into the same schema → same upsert + revalidate steps.
 
-### `ads` table shape both flows write into
+### Table shape both flows write into
+
+This intentionally matches Gumloop's own field list — no category/platform/
+still-running/publish-gate columns, since those aren't part of what Gumloop's
+extract step produces. `ads`:
 
 | column | notes |
 |---|---|
-| `slug` | unique, slugified `brand + headline` |
-| `brand`, `headline`, `dek` | dek = short descriptor, e.g. "Luxury sports watch" |
-| `vertical` | category used for `/category/[vertical]` |
-| `platforms` | `text[]`, e.g. `{meta, instagram, tiktok}` |
-| `format` | `image \| video \| carousel \| reel` |
-| `launch_date` | drives `/month/[month]` and homepage ordering |
-| `still_running` | powers the live "still running" badge |
-| `media_url`, `media_type` | the creative itself |
-| `copy_notes` | 2–3 sentence fact-checked writeup — required, this is the "article" |
+| `id` | uuid, PK |
+| `brand_name`, `title` | title = the campaign line/hook |
+| `year` | int; drives `/year/[year]` and homepage ordering |
+| `description` | 2–3 sentence fact-checked writeup — required, this is the "article" |
 | `origin` | which flow/source produced the row, e.g. `gumloop-flow-1`, `seed` |
-| `sources` | `jsonb` array of `{ label, url }` |
-| `is_published` | gates what the public site can read (RLS) |
+| `source_name`, `source_url` | single citation link shown on the detail page |
+| `seed_thread_url` | link to the research thread/conversation that surfaced the ad, shown as "View thread" if present |
+| `slug` | unique, slugified `brand + title` |
+| `created_at` | timestamptz |
+
+`ad_images` (one-to-many per ad):
+
+| column | notes |
+|---|---|
+| `id` | uuid, PK |
+| `ad_id` | FK -> `ads.id` |
+| `image_url` | full-size creative |
+| `thumbnail_url` | used on grid tiles; falls back to `image_url` if null |
+| `width`, `height` | int, optional |
+
+The first image row returned for an ad is used as the hero on its detail page;
+any additional rows render as a small gallery strip beneath it.
+
+Everything Gumloop writes goes live immediately — there's no `is_published`
+gate in this schema. If a review queue turns out to be needed later, add that
+column back and update the RLS policy in `supabase/schema.sql` to check it.
 
 Credentials: store the Supabase `sb_secret_...` key as a Gumloop credential
 (bypasses RLS for writes) and the same `REVALIDATE_SECRET` value as a Gumloop

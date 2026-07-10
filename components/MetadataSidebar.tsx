@@ -1,6 +1,4 @@
 import type { Ad } from "@/lib/types";
-import { formatDate, formatLabel, platformLabel, titleCase } from "@/lib/format";
-import { StillRunningBadge } from "@/components/StillRunningBadge";
 
 function Row({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -16,23 +14,31 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 export function MetadataSidebar({ ad }: { ad: Ad }) {
   return (
     <dl className="rounded-lg border border-line bg-bg-raised px-4">
-      <Row label="Category">
-        <a
-          href={`/category/${ad.vertical}`}
-          className="hover:text-accent transition"
-        >
-          {titleCase(ad.vertical)}
-        </a>
-      </Row>
-      <Row label="Period">{ad.dek ?? "—"}</Row>
-      <Row label="Launched">{formatDate(ad.launch_date)}</Row>
-      <Row label="Platform(s)">{ad.platforms.map(platformLabel).join(", ")}</Row>
-      <Row label="Format">{formatLabel(ad.format)}</Row>
+      <Row label="Year">{ad.year ?? "Undated"}</Row>
       <Row label="Origin">{ad.origin ?? "Unknown"}</Row>
-      {ad.still_running && (
-        <div className="py-3">
-          <StillRunningBadge />
-        </div>
+      {ad.source_url && (
+        <Row label="Source">
+          <a
+            href={ad.source_url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="hover:text-accent transition"
+          >
+            {ad.source_name ?? ad.source_url}
+          </a>
+        </Row>
+      )}
+      {ad.seed_thread_url && (
+        <Row label="Research thread">
+          <a
+            href={ad.seed_thread_url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className="hover:text-accent transition"
+          >
+            View thread
+          </a>
+        </Row>
       )}
     </dl>
   );

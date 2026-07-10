@@ -2,485 +2,346 @@
   {
     "id": "00000000-0000-0000-0000-000000000001",
     "slug": "duolingo-dua-lipa-2024",
-    "brand": "Duolingo",
-    "headline": "Learn a language, or the owl finds you",
-    "dek": "Mascot-driven brand stunt",
-    "vertical": "edtech",
-    "platforms": [
-      "instagram",
-      "tiktok"
-    ],
-    "format": "reel",
-    "launch_date": "2024-04-01",
-    "still_running": false,
-    "media_url": "/seed/duolingo-dua-lipa-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.duolingo.com",
-    "body_copy": "Duo missed you.",
-    "copy_notes": "Duolingo extended its unhinged-mascot bit — including a staged 'death' of Duo the owl and a cameo-style tie-in around Dua Lipa's album cycle — leaning entirely on organic-feeling stunts rather than traditional media spend. The strategy mirrors the brand's long-running approach of treating its app-store notifications and social account as the actual ad unit.",
+    "brand_name": "Duolingo",
+    "title": "Learn a language, or the owl finds you",
+    "year": 2024,
+    "description": "Duolingo extended its unhinged-mascot bit — including a staged 'death' of Duo the owl and a cameo-style tie-in around Dua Lipa's album cycle — leaning entirely on organic-feeling stunts rather than traditional media spend. The strategy mirrors the brand's long-running approach of treating its app-store notifications and social account as the actual ad unit.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Ad Age — industry coverage",
+    "source_url": "https://adage.com",
+    "seed_thread_url": null,
+    "created_at": "2024-04-01T00:00:00.000Z",
+    "images": [
       {
-        "label": "Duolingo — official site",
-        "url": "https://www.duolingo.com"
-      },
-      {
-        "label": "Ad Age — industry coverage",
-        "url": "https://adage.com"
+        "id": "00000000-0000-0000-0000-000000000001-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000001",
+        "image_url": "/seed/duolingo-dua-lipa-2024.svg",
+        "thumbnail_url": "/seed/duolingo-dua-lipa-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000002",
     "slug": "cerave-michael-cera-2024",
-    "brand": "CeraVe",
-    "headline": "It's CeraVe. He's Michael Cera. Coincidence?",
-    "dek": "Super Bowl skincare launch film",
-    "vertical": "skincare",
-    "platforms": [
-      "meta",
-      "instagram",
-      "youtube"
-    ],
-    "format": "video",
-    "launch_date": "2024-02-08",
-    "still_running": false,
-    "media_url": "/seed/cerave-michael-cera-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.cerave.com",
-    "body_copy": "Developed with dermatologists. Also, apparently, with Michael Cera.",
-    "copy_notes": "CeraVe built a mockumentary-style campaign around the coincidence of Michael Cera's name, running teaser content for weeks before revealing the joke in a Super Bowl spot. It's a rare case of a clinical, dermatologist-endorsed skincare brand using absurdist celebrity comedy instead of the category's usual efficacy-first messaging.",
+    "brand_name": "CeraVe",
+    "title": "It's CeraVe. He's Michael Cera. Coincidence?",
+    "year": 2024,
+    "description": "CeraVe built a mockumentary-style campaign around the coincidence of Michael Cera's name, running teaser content for weeks before revealing the joke in a Super Bowl spot. It's a rare case of a clinical, dermatologist-endorsed skincare brand using absurdist celebrity comedy instead of the category's usual efficacy-first messaging.",
     "origin": "seed",
-    "sources": [
+    "source_name": "AdWeek — industry coverage",
+    "source_url": "https://www.adweek.com",
+    "seed_thread_url": null,
+    "created_at": "2024-02-08T00:00:00.000Z",
+    "images": [
       {
-        "label": "CeraVe — official site",
-        "url": "https://www.cerave.com"
-      },
-      {
-        "label": "AdWeek — industry coverage",
-        "url": "https://www.adweek.com"
+        "id": "00000000-0000-0000-0000-000000000002-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000002",
+        "image_url": "/seed/cerave-michael-cera-2024.svg",
+        "thumbnail_url": "/seed/cerave-michael-cera-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000003",
     "slug": "state-farm-jake-2024",
-    "brand": "State Farm",
-    "headline": "Like a good neighbor, Jake is there",
-    "dek": "Long-running mascot campaign refresh",
-    "vertical": "insurance",
-    "platforms": [
-      "meta",
-      "instagram",
-      "youtube"
-    ],
-    "format": "video",
-    "launch_date": "2024-03-15",
-    "still_running": true,
-    "media_url": "/seed/state-farm-jake-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.statefarm.com",
-    "body_copy": "Jake from State Farm knows a thing or two, because he's seen a thing or two.",
-    "copy_notes": "State Farm continued to lean on its 'Jake from State Farm' character, pairing him with athlete cameos across digital cutdowns rather than a single hero spot. The insurer's decade-plus consistency with the same mascot is unusual in a category that typically rotates spokespeople every few years.",
+    "brand_name": "State Farm",
+    "title": "Like a good neighbor, Jake is there",
+    "year": 2024,
+    "description": "State Farm continued to lean on its 'Jake from State Farm' character, pairing him with athlete cameos across digital cutdowns rather than a single hero spot. The insurer's decade-plus consistency with the same mascot is unusual in a category that typically rotates spokespeople every few years.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Marketing Dive — industry coverage",
+    "source_url": "https://www.marketingdive.com",
+    "seed_thread_url": null,
+    "created_at": "2024-03-15T00:00:00.000Z",
+    "images": [
       {
-        "label": "State Farm — official site",
-        "url": "https://www.statefarm.com"
-      },
-      {
-        "label": "Marketing Dive — industry coverage",
-        "url": "https://www.marketingdive.com"
+        "id": "00000000-0000-0000-0000-000000000003-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000003",
+        "image_url": "/seed/state-farm-jake-2024.svg",
+        "thumbnail_url": "/seed/state-farm-jake-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000004",
     "slug": "liquid-death-convicted-2024",
-    "brand": "Liquid Death",
-    "headline": "Convicted of loving Liquid Death too much",
-    "dek": "Stunt-marketing beverage brand",
-    "vertical": "beverage",
-    "platforms": [
-      "instagram",
-      "tiktok"
-    ],
-    "format": "video",
-    "launch_date": "2024-06-10",
-    "still_running": false,
-    "media_url": "/seed/liquid-death-convicted-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://liquiddeath.com",
-    "body_copy": "Murder your thirst.",
-    "copy_notes": "Liquid Death cast real people who had been fired, arrested, or otherwise gotten in trouble for their devotion to the brand, framing canned water with the visual language of a heavy-metal energy drink. The joke only works because the product itself is unglamorous — comedy is doing the differentiation that flavor or price would do for a normal beverage brand.",
+    "brand_name": "Liquid Death",
+    "title": "Convicted of loving Liquid Death too much",
+    "year": 2024,
+    "description": "Liquid Death cast real people who had been fired, arrested, or otherwise gotten in trouble for their devotion to the brand, framing canned water with the visual language of a heavy-metal energy drink. The joke only works because the product itself is unglamorous — comedy is doing the differentiation that flavor or price would do for a normal beverage brand.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Ad Age — industry coverage",
+    "source_url": "https://adage.com",
+    "seed_thread_url": null,
+    "created_at": "2024-06-10T00:00:00.000Z",
+    "images": [
       {
-        "label": "Liquid Death — official site",
-        "url": "https://liquiddeath.com"
-      },
-      {
-        "label": "Ad Age — industry coverage",
-        "url": "https://adage.com"
+        "id": "00000000-0000-0000-0000-000000000004-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000004",
+        "image_url": "/seed/liquid-death-convicted-2024.svg",
+        "thumbnail_url": "/seed/liquid-death-convicted-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000005",
     "slug": "poppi-super-bowl-2025",
-    "brand": "Poppi",
-    "headline": "The soda that loves your gut back",
-    "dek": "Prebiotic soda, Super Bowl push",
-    "vertical": "beverage",
-    "platforms": [
-      "meta",
-      "instagram",
-      "tiktok"
-    ],
-    "format": "video",
-    "launch_date": "2025-02-09",
-    "still_running": false,
-    "media_url": "/seed/poppi-super-bowl-2025.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://drinkpoppi.com",
-    "body_copy": "Gut health, but make it a soda aisle.",
-    "copy_notes": "Poppi paired a Super Bowl broadcast spot with a QR-code vending stunt at the stadium, betting that a functional-beverage pitch (prebiotics, low sugar) could work inside a category historically sold on nostalgia and taste. The stunt drew as much commentary for its execution and subsequent backlash as for the ad itself, a reminder that experiential add-ons carry their own reputational risk.",
+    "brand_name": "Poppi",
+    "title": "The soda that loves your gut back",
+    "year": 2025,
+    "description": "Poppi paired a Super Bowl broadcast spot with a QR-code vending stunt at the stadium, betting that a functional-beverage pitch (prebiotics, low sugar) could work inside a category historically sold on nostalgia and taste. The stunt drew as much commentary for its execution and subsequent backlash as for the ad itself, a reminder that experiential add-ons carry their own reputational risk.",
     "origin": "seed",
-    "sources": [
+    "source_name": "AdWeek — industry coverage",
+    "source_url": "https://www.adweek.com",
+    "seed_thread_url": null,
+    "created_at": "2025-02-09T00:00:00.000Z",
+    "images": [
       {
-        "label": "Poppi — official site",
-        "url": "https://drinkpoppi.com"
-      },
-      {
-        "label": "AdWeek — industry coverage",
-        "url": "https://www.adweek.com"
+        "id": "00000000-0000-0000-0000-000000000005-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000005",
+        "image_url": "/seed/poppi-super-bowl-2025.svg",
+        "thumbnail_url": "/seed/poppi-super-bowl-2025.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000006",
     "slug": "mint-mobile-ryan-reynolds-2024",
-    "brand": "Mint Mobile",
-    "headline": "Premium wireless. Shockingly cheap.",
-    "dek": "Founder-as-spokesperson telecom ads",
-    "vertical": "telecom",
-    "platforms": [
-      "meta",
-      "instagram",
-      "youtube"
-    ],
-    "format": "video",
-    "launch_date": "2024-05-20",
-    "still_running": true,
-    "media_url": "/seed/mint-mobile-ryan-reynolds-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.mintmobile.com",
-    "body_copy": "I own this company. I'm also in the ad. Please buy a plan.",
-    "copy_notes": "Mint Mobile kept running low-budget-styled Ryan Reynolds cutdowns direct-to-camera, a format built to look inexpensive on purpose — the joke is part of the pitch that the carrier passes savings to customers. The ongoing cadence of short, meme-ready clips is built for the Ad Library format as much as for TV.",
+    "brand_name": "Mint Mobile",
+    "title": "Premium wireless. Shockingly cheap.",
+    "year": 2024,
+    "description": "Mint Mobile kept running low-budget-styled Ryan Reynolds cutdowns direct-to-camera, a format built to look inexpensive on purpose — the joke is part of the pitch that the carrier passes savings to customers. The ongoing cadence of short, meme-ready clips is built for the Ad Library format as much as for TV.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Marketing Dive — industry coverage",
+    "source_url": "https://www.marketingdive.com",
+    "seed_thread_url": null,
+    "created_at": "2024-05-20T00:00:00.000Z",
+    "images": [
       {
-        "label": "Mint Mobile — official site",
-        "url": "https://www.mintmobile.com"
-      },
-      {
-        "label": "Marketing Dive — industry coverage",
-        "url": "https://www.marketingdive.com"
+        "id": "00000000-0000-0000-0000-000000000006-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000006",
+        "image_url": "/seed/mint-mobile-ryan-reynolds-2024.svg",
+        "thumbnail_url": "/seed/mint-mobile-ryan-reynolds-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000007",
     "slug": "openai-chatgpt-super-bowl-2025",
-    "brand": "OpenAI",
-    "headline": "The dawn of a new AI",
-    "dek": "OpenAI's first-ever brand ad",
-    "vertical": "ai-tool",
-    "platforms": [
-      "youtube",
-      "meta"
-    ],
-    "format": "video",
-    "launch_date": "2025-02-09",
-    "still_running": false,
-    "media_url": "/seed/openai-chatgpt-super-bowl-2025.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://openai.com",
-    "body_copy": "Intelligence, arriving.",
-    "copy_notes": "OpenAI's first paid Super Bowl spot leaned on sweeping, humanist imagery rather than a product demo, treating ChatGPT as a moment-of-history event instead of a software feature. It's a notable pivot for a company that grew almost entirely on word-of-mouth and developer buzz, now buying attention alongside legacy consumer brands.",
+    "brand_name": "OpenAI",
+    "title": "The dawn of a new AI",
+    "year": 2025,
+    "description": "OpenAI's first paid Super Bowl spot leaned on sweeping, humanist imagery rather than a product demo, treating ChatGPT as a moment-of-history event instead of a software feature. It's a notable pivot for a company that grew almost entirely on word-of-mouth and developer buzz, now buying attention alongside legacy consumer brands.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Ad Age — industry coverage",
+    "source_url": "https://adage.com",
+    "seed_thread_url": null,
+    "created_at": "2025-02-09T00:00:00.000Z",
+    "images": [
       {
-        "label": "OpenAI — official site",
-        "url": "https://openai.com"
-      },
-      {
-        "label": "Ad Age — industry coverage",
-        "url": "https://adage.com"
+        "id": "00000000-0000-0000-0000-000000000007-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000007",
+        "image_url": "/seed/openai-chatgpt-super-bowl-2025.svg",
+        "thumbnail_url": "/seed/openai-chatgpt-super-bowl-2025.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000008",
     "slug": "perplexity-ask-anything-2024",
-    "brand": "Perplexity",
-    "headline": "Skip the search. Get the answer.",
-    "dek": "AI answer engine, challenger positioning",
-    "vertical": "ai-tool",
-    "platforms": [
-      "meta",
-      "instagram"
-    ],
-    "format": "image",
-    "launch_date": "2024-09-12",
-    "still_running": true,
-    "media_url": "/seed/perplexity-ask-anything-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.perplexity.ai",
-    "body_copy": "Search, but it actually answers you.",
-    "copy_notes": "Perplexity's paid social creative positions the product directly against traditional search — screenshots of a cluttered results page next to a clean cited answer — rather than explaining what an 'AI answer engine' is from scratch. The direct-comparison format is a common challenger-brand move: define yourself by what you replace, not what you are.",
+    "brand_name": "Perplexity",
+    "title": "Skip the search. Get the answer.",
+    "year": 2024,
+    "description": "Perplexity's paid social creative positions the product directly against traditional search — screenshots of a cluttered results page next to a clean cited answer — rather than explaining what an 'AI answer engine' is from scratch. The direct-comparison format is a common challenger-brand move: define yourself by what you replace, not what you are.",
     "origin": "seed",
-    "sources": [
+    "source_name": "TechCrunch — industry coverage",
+    "source_url": "https://techcrunch.com",
+    "seed_thread_url": null,
+    "created_at": "2024-09-12T00:00:00.000Z",
+    "images": [
       {
-        "label": "Perplexity — official site",
-        "url": "https://www.perplexity.ai"
-      },
-      {
-        "label": "TechCrunch — industry coverage",
-        "url": "https://techcrunch.com"
+        "id": "00000000-0000-0000-0000-000000000008-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000008",
+        "image_url": "/seed/perplexity-ask-anything-2024.svg",
+        "thumbnail_url": "/seed/perplexity-ask-anything-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-000000000009",
     "slug": "robinhood-gold-card-2024",
-    "brand": "Robinhood",
-    "headline": "The card that pays you back",
-    "dek": "Fintech premium-tier product launch",
-    "vertical": "fintech",
-    "platforms": [
-      "meta",
-      "instagram"
-    ],
-    "format": "carousel",
-    "launch_date": "2024-05-08",
-    "still_running": false,
-    "media_url": "/seed/robinhood-gold-card-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://robinhood.com",
-    "body_copy": "3% back on everything. No categories. No caps.",
-    "copy_notes": "Robinhood's Gold Card launch ads used a waitlist-and-scarcity framing — a physical card with a visible serial number — to borrow the cachet of exclusive credit products while undercutting them on cash-back terms. The creative deliberately looks like a luxury-card ad, a departure from Robinhood's earlier, more utilitarian trading-app messaging.",
+    "brand_name": "Robinhood",
+    "title": "The card that pays you back",
+    "year": 2024,
+    "description": "Robinhood's Gold Card launch ads used a waitlist-and-scarcity framing — a physical card with a visible serial number — to borrow the cachet of exclusive credit products while undercutting them on cash-back terms. The creative deliberately looks like a luxury-card ad, a departure from Robinhood's earlier, more utilitarian trading-app messaging.",
     "origin": "seed",
-    "sources": [
+    "source_name": "TechCrunch — industry coverage",
+    "source_url": "https://techcrunch.com",
+    "seed_thread_url": null,
+    "created_at": "2024-05-08T00:00:00.000Z",
+    "images": [
       {
-        "label": "Robinhood — official site",
-        "url": "https://robinhood.com"
-      },
-      {
-        "label": "TechCrunch — industry coverage",
-        "url": "https://techcrunch.com"
+        "id": "00000000-0000-0000-0000-000000000009-img-1",
+        "ad_id": "00000000-0000-0000-0000-000000000009",
+        "image_url": "/seed/robinhood-gold-card-2024.svg",
+        "thumbnail_url": "/seed/robinhood-gold-card-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-00000000000a",
     "slug": "cash-app-block-2024",
-    "brand": "Cash App",
-    "headline": "Money moves different here",
-    "dek": "P2P payments, culture-first creative",
-    "vertical": "fintech",
-    "platforms": [
-      "instagram",
-      "tiktok"
-    ],
-    "format": "video",
-    "launch_date": "2024-11-01",
-    "still_running": false,
-    "media_url": "/seed/cash-app-block-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://cash.app",
-    "body_copy": "Cash Card. Cash Boost. Cash in hand.",
-    "copy_notes": "Cash App's creative continues to run through artist and creator partnerships rather than product-feature explainers, treating the Cash Card's design drops as a cultural object first and a debit card second. The approach mirrors streetwear marketing more than fintech marketing, which is part of how the brand differentiates from Venmo and Zelle.",
+    "brand_name": "Cash App",
+    "title": "Money moves different here",
+    "year": 2024,
+    "description": "Cash App's creative continues to run through artist and creator partnerships rather than product-feature explainers, treating the Cash Card's design drops as a cultural object first and a debit card second. The approach mirrors streetwear marketing more than fintech marketing, which is part of how the brand differentiates from Venmo and Zelle.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Marketing Dive — industry coverage",
+    "source_url": "https://www.marketingdive.com",
+    "seed_thread_url": null,
+    "created_at": "2024-11-01T00:00:00.000Z",
+    "images": [
       {
-        "label": "Cash App — official site",
-        "url": "https://cash.app"
-      },
-      {
-        "label": "Marketing Dive — industry coverage",
-        "url": "https://www.marketingdive.com"
+        "id": "00000000-0000-0000-0000-00000000000a-img-1",
+        "ad_id": "00000000-0000-0000-0000-00000000000a",
+        "image_url": "/seed/cash-app-block-2024.svg",
+        "thumbnail_url": "/seed/cash-app-block-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-00000000000b",
     "slug": "whoop-4-unlock-2024",
-    "brand": "Whoop",
-    "headline": "Unlock your body's data",
-    "dek": "Wearable fitness tracker, subscription model",
-    "vertical": "fitness",
-    "platforms": [
-      "instagram",
-      "youtube"
-    ],
-    "format": "video",
-    "launch_date": "2024-05-08",
-    "still_running": true,
-    "media_url": "/seed/whoop-4-unlock-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.whoop.com",
-    "body_copy": "No screen. No distractions. Just data that matters.",
-    "copy_notes": "Whoop's ads foreground recovery and strain scores over step counts, targeting a more data-literate fitness audience than the broader wearables market. The subscription-hardware model (the band itself is nominally free with membership) is unusual enough that a chunk of the creative has to do the work of explaining the business model, not just the device.",
+    "brand_name": "Whoop",
+    "title": "Unlock your body's data",
+    "year": 2024,
+    "description": "Whoop's ads foreground recovery and strain scores over step counts, targeting a more data-literate fitness audience than the broader wearables market. The subscription-hardware model (the band itself is nominally free with membership) is unusual enough that a chunk of the creative has to do the work of explaining the business model, not just the device.",
     "origin": "seed",
-    "sources": [
+    "source_name": "TechCrunch — industry coverage",
+    "source_url": "https://techcrunch.com",
+    "seed_thread_url": null,
+    "created_at": "2024-05-08T00:00:00.000Z",
+    "images": [
       {
-        "label": "Whoop — official site",
-        "url": "https://www.whoop.com"
-      },
-      {
-        "label": "TechCrunch — industry coverage",
-        "url": "https://techcrunch.com"
+        "id": "00000000-0000-0000-0000-00000000000b-img-1",
+        "ad_id": "00000000-0000-0000-0000-00000000000b",
+        "image_url": "/seed/whoop-4-unlock-2024.svg",
+        "thumbnail_url": "/seed/whoop-4-unlock-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-00000000000c",
     "slug": "stanley-quencher-2024",
-    "brand": "Stanley",
-    "headline": "The tumbler that survived a burning car",
-    "dek": "UGC-driven virality, legacy brand",
-    "vertical": "retail",
-    "platforms": [
-      "tiktok",
-      "instagram"
-    ],
-    "format": "video",
-    "launch_date": "2024-01-20",
-    "still_running": false,
-    "media_url": "/seed/stanley-quencher-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.stanley1913.com",
-    "body_copy": "Built for the wild. Carried everywhere else.",
-    "copy_notes": "Stanley's marketing largely amplified a customer's own viral video of a Quencher tumbler surviving a car fire with the ice inside still intact, rather than originating the moment itself — the brand's paid media picked up and re-cut existing organic content. It's a case study in a 100-year-old outdoor-gear company repositioning around limited-edition colorways and collector culture instead of durability alone.",
+    "brand_name": "Stanley",
+    "title": "The tumbler that survived a burning car",
+    "year": 2024,
+    "description": "Stanley's marketing largely amplified a customer's own viral video of a Quencher tumbler surviving a car fire with the ice inside still intact, rather than originating the moment itself — the brand's paid media picked up and re-cut existing organic content. It's a case study in a 100-year-old outdoor-gear company repositioning around limited-edition colorways and collector culture instead of durability alone.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Ad Age — industry coverage",
+    "source_url": "https://adage.com",
+    "seed_thread_url": null,
+    "created_at": "2024-01-20T00:00:00.000Z",
+    "images": [
       {
-        "label": "Stanley — official site",
-        "url": "https://www.stanley1913.com"
-      },
-      {
-        "label": "Ad Age — industry coverage",
-        "url": "https://adage.com"
+        "id": "00000000-0000-0000-0000-00000000000c-img-1",
+        "ad_id": "00000000-0000-0000-0000-00000000000c",
+        "image_url": "/seed/stanley-quencher-2024.svg",
+        "thumbnail_url": "/seed/stanley-quencher-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-00000000000d",
     "slug": "crumbl-weekly-menu-2024",
-    "brand": "Crumbl",
-    "headline": "This week's flavors are already gone",
-    "dek": "Rotating-menu bakery chain",
-    "vertical": "food",
-    "platforms": [
-      "instagram",
-      "tiktok"
-    ],
-    "format": "reel",
-    "launch_date": "2024-08-05",
-    "still_running": true,
-    "media_url": "/seed/crumbl-weekly-menu-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://crumblcookies.com",
-    "body_copy": "New flavors, every Monday.",
-    "copy_notes": "Crumbl's ads are structured entirely around scarcity and a weekly release cadence, mirroring sneaker-drop marketing more than fast-casual food marketing. The rotating menu gives the brand a reason to post new creative every single week without needing a new campaign concept — the calendar is the campaign.",
+    "brand_name": "Crumbl",
+    "title": "This week's flavors are already gone",
+    "year": 2024,
+    "description": "Crumbl's ads are structured entirely around scarcity and a weekly release cadence, mirroring sneaker-drop marketing more than fast-casual food marketing. The rotating menu gives the brand a reason to post new creative every single week without needing a new campaign concept — the calendar is the campaign.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Marketing Dive — industry coverage",
+    "source_url": "https://www.marketingdive.com",
+    "seed_thread_url": null,
+    "created_at": "2024-08-05T00:00:00.000Z",
+    "images": [
       {
-        "label": "Crumbl — official site",
-        "url": "https://crumblcookies.com"
-      },
-      {
-        "label": "Marketing Dive — industry coverage",
-        "url": "https://www.marketingdive.com"
+        "id": "00000000-0000-0000-0000-00000000000d-img-1",
+        "ad_id": "00000000-0000-0000-0000-00000000000d",
+        "image_url": "/seed/crumbl-weekly-menu-2024.svg",
+        "thumbnail_url": "/seed/crumbl-weekly-menu-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-00000000000e",
     "slug": "ag1-foundational-nutrition-2024",
-    "brand": "AG1",
-    "headline": "One scoop, foundational nutrition",
-    "dek": "Wellness subscription, rebrand push",
-    "vertical": "wellness",
-    "platforms": [
-      "instagram",
-      "youtube"
-    ],
-    "format": "video",
-    "launch_date": "2024-03-01",
-    "still_running": true,
-    "media_url": "/seed/ag1-foundational-nutrition-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://drinkag1.com",
-    "body_copy": "Your daily foundational nutrition supplement.",
-    "copy_notes": "AG1 (formerly Athletic Greens) rebranded around the vaguer, more defensible term 'foundational nutrition' rather than specific health claims, a common move for supplement brands navigating regulatory scrutiny. Its ad creative leans heavily on subscription-and-ritual framing — the daily scoop as habit — over any single ingredient story.",
+    "brand_name": "AG1",
+    "title": "One scoop, foundational nutrition",
+    "year": 2024,
+    "description": "AG1 (formerly Athletic Greens) rebranded around the vaguer, more defensible term 'foundational nutrition' rather than specific health claims, a common move for supplement brands navigating regulatory scrutiny. Its ad creative leans heavily on subscription-and-ritual framing — the daily scoop as habit — over any single ingredient story.",
     "origin": "seed",
-    "sources": [
+    "source_name": "AdWeek — industry coverage",
+    "source_url": "https://www.adweek.com",
+    "seed_thread_url": null,
+    "created_at": "2024-03-01T00:00:00.000Z",
+    "images": [
       {
-        "label": "AG1 — official site",
-        "url": "https://drinkag1.com"
-      },
-      {
-        "label": "AdWeek — industry coverage",
-        "url": "https://www.adweek.com"
+        "id": "00000000-0000-0000-0000-00000000000e-img-1",
+        "ad_id": "00000000-0000-0000-0000-00000000000e",
+        "image_url": "/seed/ag1-foundational-nutrition-2024.svg",
+        "thumbnail_url": "/seed/ag1-foundational-nutrition-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   },
   {
     "id": "00000000-0000-0000-0000-00000000000f",
     "slug": "instacart-add-to-cart-2024",
-    "brand": "Instacart",
-    "headline": "Add it to the cart",
-    "dek": "Super Bowl grocery-delivery push",
-    "vertical": "food-delivery",
-    "platforms": [
-      "youtube",
-      "meta"
-    ],
-    "format": "video",
-    "launch_date": "2024-02-08",
-    "still_running": false,
-    "media_url": "/seed/instacart-add-to-cart-2024.svg",
-    "media_type": "image",
-    "advertiser_page_url": "https://www.instacart.com",
-    "body_copy": "Whatever the recipe calls for, we'll bring it.",
-    "copy_notes": "Instacart's Super Bowl spot built its visual gag around edible art made from grocery items, a way to make a fundamentally logistics-driven service (delivery, routing, warehouses) feel colorful and food-forward on screen. The category's ads increasingly compete on the emotional register of home cooking rather than convenience or speed alone.",
+    "brand_name": "Instacart",
+    "title": "Add it to the cart",
+    "year": 2024,
+    "description": "Instacart's Super Bowl spot built its visual gag around edible art made from grocery items, a way to make a fundamentally logistics-driven service (delivery, routing, warehouses) feel colorful and food-forward on screen. The category's ads increasingly compete on the emotional register of home cooking rather than convenience or speed alone.",
     "origin": "seed",
-    "sources": [
+    "source_name": "Ad Age — industry coverage",
+    "source_url": "https://adage.com",
+    "seed_thread_url": null,
+    "created_at": "2024-02-08T00:00:00.000Z",
+    "images": [
       {
-        "label": "Instacart — official site",
-        "url": "https://www.instacart.com"
-      },
-      {
-        "label": "Ad Age — industry coverage",
-        "url": "https://adage.com"
+        "id": "00000000-0000-0000-0000-00000000000f-img-1",
+        "ad_id": "00000000-0000-0000-0000-00000000000f",
+        "image_url": "/seed/instacart-add-to-cart-2024.svg",
+        "thumbnail_url": "/seed/instacart-add-to-cart-2024.svg",
+        "width": 1080,
+        "height": 1350
       }
-    ],
-    "is_published": true
+    ]
   }
 ]
